@@ -32,6 +32,33 @@
 		.sidebar a:hover {
 			color: blue;
 		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
 		.main {
 			background-color: white;
 			height: 90%;
@@ -51,14 +78,30 @@
 			<font size = "+5"> Steven Pan </font>
 		</font>
 	</div>
+	</div>
 	<div class="sidebar">
 		<a href="MyPage_Home.html">Home</a>
 		<a href="MyPage_AboutMe.html">About Me</a>
-		<a href="MyPage_Math.html">Math</a>
-		<a href="MyPage_Math_Resources.html">  <font size = "+0.5">•  Resources</font></a>
-		<a href="MyPage_Linear_Algebra.html">Linear Algebra</a>
-		<a href="MyPage_Computer_Vision.html">Computer Vision</a>
-		<a href="MyPage_CNN.html">CNN</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Linear_Algebra.html">Linear Algebra</a>
+			<a href="MyPage_Math.html">PoTD</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+		</div>
 		<a href="MyPage_Golf.html">Golf</a>
 	</div>
 	<div class = "main">
@@ -84,5 +127,21 @@
 		sum it up 3 times (once per channel). By repeating this process many times, we can identify many features with a relatively small ending pixel size even for large images while maintaing the color.
 		</p>
 	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
 </body>
 </html>
