@@ -198,7 +198,7 @@
 		edges are the edges that are returned.
 		By changing the \(\sigma\) levels of the Gaussian filter, we can decide the if finer edges show up or not. A larger \(\sigma\) would mean the fine edges are removed and only the prominent edges remain. 
 		A demonstration is shown below of an image I took a my stuffed animal.</p>
-		<img src="./HTML/KJNB3077.jpg" alt="Stuffed Animal" style="width:400px;height:300px;"> <img src="./HTML/mono.jpg" alt="Monochrome Stuffed Animal" style="width:400px;height:300px;"> <img src="./HTML/sigma1.jpg" alt="Sigma 1" style="width:400px;height:300px;"> <img src="./HTML/sigma5.jpg" alt="Sigma 5" style="width:400px;height:300px;">
+		<img src="KJNB3077.JPG" alt="Stuffed Animal" style="width:400px;height:300px;"> <img src="mono.jpg" alt="Monochrome Stuffed Animal" style="width:400px;height:300px;"> <img src="sigma1.JPG" alt="Sigma 1" style="width:400px;height:300px;"> <img src="sigma5.JPG" alt="Sigma 5" style="width:400px;height:300px;">
 		<p>
 		As seen, the leftmost photo is the original. We make the image monochrome (black and white) and we achieve the middle left image. We then apply a canny operator with \(\sigma = 1\) on the monochrome image to achieve
 		the middle right photo. We also apply a canny operator with \(\sigma = 5\) on the monochrome image to achieve the rightmost image. We notice that as the sigma increases, the finer edges tend to be removed or blurred out, which
@@ -291,14 +291,14 @@
 		</p><p>
 		However, this is not the ancient times and we don't need pinhole cameras and 8 plus hours of exposure to take one photo. We use lenses instead with digital cameras. The lenses are shown as follows:
 		</p>
-		<img src="./HTML/lenses1.jpg" alt="How a lense works" class = "center" style="width:400px;height:300px;">
+		<img src="lenses1.JPG" alt="How a lense works" class = "center" style="width:400px;height:300px;">
 		<p>
 		So, we note that the lense is trying to make sure that all the rays of light are projected onto the same point. However, the lense cannot be perfect for all points. In the image, the point labelled by the red
 		is directly very perfectly, but we note that the blue will be out of focus (the points that the rays hit form a "circle of confusion").
 		</p><p>
 		To look more deeply into this issue, we will first consider thin lenses:
 		</p>
-		<img src="./HTML/lenses2.jpg" alt="Thin Lenses" class = "center" style="width:600px;height:300px;">
+		<img src="lenses2.JPG" alt="Thin Lenses" class = "center" style="width:600px;height:300px;">
 		<p>
 		We will now introduce a formula that applies to these lenses:
 		$$\frac{1}{f} = \frac{1}{d_0} + \frac{1}{d_1}$$
