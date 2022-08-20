@@ -112,7 +112,24 @@
 	</div>
 	<div style = "overflow-y: scroll" class = "main">
 		<h1>Hardware</h1>
-		<p>I will mainly go over my project that I created using an Elegoo kit and arduino. Below is a list of the tools and their function:
+		<p>
+		My project revolves around controlling LEDs using an IR sensor and a remote control. In the below picture, the little black box sticking out is the IR sensor. 
+		By pressing the different buttons on the remote control, I can control which lights turn on or off. I also coded in extra features such as a shift and XOR (which turns on all the lights that 
+		were off and vice versa).
+		</p>
+		<img src="HDNXTfp.jpg" alt="Final Project" class = "center" style="width:450px;height:600px">
+		<p>
+		I designed everything using Kicad and created my own PCB (printable controller board). The Kicad schematic can be seen below:
+		</p>
+		<img src="kicadsch.jpg" alt="Kicad Schematic" class = "center" style="width:600px;height:450px">
+		<p>
+		The video I made demonstrating the different features is shown below:
+		</p>
+		 <video class="center" width="450" height="600" controls>
+			<source src="demo.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+		</video> 
+		<p>Below is a list of the tools that I experimented with and their functions:
 		<ul>
 		<li>Breadboard: These are where the electrical circuit prototypes are made so that they can be
 		 tested before minimization. They are electrically connected in a certain way, which makes it
@@ -182,23 +199,6 @@
 		low inmpendance output. Non-inverting amplifiers are the opposite of inverting amplifiers which has an output voltage 180 
 		degrees out of phase with the input voltage.
 		</p>
-		<p>
-		My project revolves around controlling LEDs using an IR sensor and a remote control. In the below picture, the little black box sticking out is the IR sensor. 
-		By pressing the different buttons on the remote control, I can control which lights turn on or off. I also coded in extra features such as a shift and XOR (which turns on all the lights that 
-		were off and vice versa).
-		</p>
-		<img src="HDNXTfp.jpg" alt="Final Project" class = "center" style="width:450px;height:600px">
-		<p>
-		I designed everything using Kicad and created my own PCB (printable controller board). The Kicad schematic can be seen below:
-		</p>
-		<img src="kicadsch.JPG" alt="Kicad Schematic" class = "center" style="width:600px;height:450px">
-		<p>
-		The video I made demonstrating the different features is shown below:
-		</p>
-		 <video class="center" width="450" height="600" controls>
-			<source src="demo.mp4" type="video/mp4">
-		Your browser does not support the video tag.
-		</video> 
 	</div>
 	<script>
 	var dropdown = document.getElementsByClassName("dropdown-btn");
