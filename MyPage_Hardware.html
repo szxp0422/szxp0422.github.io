@@ -107,28 +107,13 @@
 		<div class="dropdown-container">
 			<a href="MyPage_Traffic.html">Traffic Sim</a>
 			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
 		</div>
 		<a href="MyPage_Golf.html">Golf</a>
 	</div>
 	<div style = "overflow-y: scroll" class = "main">
 		<h1>Hardware</h1>
-		<p>
-		My project revolves around controlling LEDs using an IR sensor and a remote control. In the below picture, the little black box sticking out is the IR sensor. 
-		By pressing the different buttons on the remote control, I can control which lights turn on or off. I also coded in extra features such as a shift and XOR (which turns on all the lights that 
-		were off and vice versa).
-		</p>
-		<img src="HDNXTfp.jpg" alt="Final Project" class = "center" style="width:450px;height:600px">
-		<p>
-		I designed everything using Kicad and created my own PCB (printable controller board). The Kicad schematic can be seen below:
-		</p>
-		<img src="kicadsch.jpg" alt="Kicad Schematic" class = "center" style="width:600px;height:450px">
-		<p>
-		The video I made demonstrating the different features is shown below:
-		</p>
-		 <video class="center" width="450" height="600" controls>
-			<source src="demo.mp4" type="video/mp4">
-		Your browser does not support the video tag.
-		</video> 
+		<h2>Tools</h2>
 		<p>Below is a list of the tools that I experimented with and their functions:
 		<ul>
 		<li>Breadboard: These are where the electrical circuit prototypes are made so that they can be
@@ -156,8 +141,9 @@
 		Temperature, infrared, photoresistor, humidity, pressure, photoencoders</li>
 		</ul>
 		</p>
+		<h2>Circuit Principles</h2>
 		<p>
-		When building my circuit, I had to keep in mind the four principles of circuits. The first one is that the current will always travel down the past of least 
+		There are four principles of circuits. The first one is that the current will always travel down the past of least 
 		resistance. This means that a current will not go through a resistor if there is an alternate path that is just 
 		a wire. The second is that nodes in a circuite share an endpoint. Each node has the same voltage through out it. 
 		The third one is set as two rules: Kirchhoffs Circuit Law (KCL) and Kirchhoffs Voltage Law (KVL).  KCL states that the total 
@@ -166,19 +152,21 @@
 		within the same loop, which is equal to 0. The last one is series vs parallel. Elements in series share an endpoint node. Elements in parallel 
 		share both start and end node.
 		</p>
+		<h2>Resistance Calculation</h2>
 		<p>
-		Another important step that I had to do was resistance calculation for series and parallel. If there are \(n\) 
+		If there are \(n\) 
 		resistors, with resistance \(R_1, R_2, \dots, R_n\) respectively, the total resistance can be found. If they are 
 		in series, then the total resistance is just their sum. If they were in parallel, the total resistance would be found 
 		using $$\frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}$$
 		</p>
 		<p>
-		To better understand these principles, one of the practice problems I solved was the Wheatstong Bridge circuit, shown below.
+		An example for solving the Wheatstone Bridge circuit is shown below.
 		</p>
 		<img src="wsb.JPG" alt="Wheatstone Bridge circuit" class = "center" style="width:300px;height:400px">
 		<img src="wsbsolved.jpg" alt="Wheatstone Bridge circuit solved" class = "center" style="width:600px;height:450px">
+		<h2>Operation amplifiers ("op-amps")</h2>
 		<p>
-		Next, I learned about operation amplifiers, which are simplified to be "op-amps". Each op-amp has two input terminals (V+, V-), 
+		Each op-amp has two input terminals (V+, V-), 
 		2 rails (Vs+, Vs-), and one output terminal (Vout). These are very important because they add/multiply/differentiate/integrate 
 		signals, stabilize signals, filter signals, separates circuits to prevent loading effect, and amplify only true signals. For 
 		the ideal op-amp, there are 3 golden rules:
