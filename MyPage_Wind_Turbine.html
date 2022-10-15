@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">PoTD</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+	</div>
+	<div class = "main">
+		<h1>Optimization of Wind Turbines by Altering Blade Degrees</h1>
+		<p>Abstract: As the world continues to burn through our limited supplies of non-renewable energy sources, energy will become a scarcity in the near future. 
+		To combat this, scientists have been focusing on clean energy production. Of all the types of energy, wind power has a lot of room for improvement, as it currently only contributes 3.24% of the total 
+		energy production in America. This paper analyzes the factors that impact the power output of a horizontal axis wind turbine, including pitch angles and blade degrees. Linear regression and multiple regression
+		tests determine that the most optimal angle for the pitch and blades is around 7 degrees for all wind speeds. This results in a near 100% torque, causing the power output to have a 100% increase on the current
+		average wind turbine capacity (2.5 MW). With these results, the efficiency of power generation will increase for each turbine, leading to greater energy outputs. In the future, they could replace non-renewable
+		energy sources, which not only reduces the amount of CO2 emissions but is also cheaper.
+		</p>
+	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>
