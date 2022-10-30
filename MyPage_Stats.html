@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.tree,
+		.tree ul,
+		.tree li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		.tree {
+			margin: 0 0 1em;
+			text-align: center;
+		}
+		.tree,
+		.tree ul {
+			display: table;
+		}
+		.tree ul {
+			width: 100%;
+		}
+		.tree li {
+			display: table-cell;
+			padding: .5em 0;
+			vertical-align: top;
+		}
+		.tree li:before {
+			outline: solid 1px #666;
+			content: "";
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.tree li:first-child:before {
+			left: 50%;
+		}
+		.tree li:last-child:before {
+			right: 50%;
+		}
+		.tree code,
+		.tree span {
+			border: solid .1em #666;
+			border-radius: .2em;
+			display: inline-block;
+			margin: 0 .2em .5em;
+			padding: .2em .5em;
+			position: relative;
+		}
+		.tree ul:before,
+		.tree code:before,
+		.tree span:before {
+			outline: solid 1px #666;
+			content: "";
+			height: .5em;
+			left: 50%;
+			position: absolute;
+		}
+		.tree ul:before {
+			top: -.5em;
+		}
+		.tree code:before,
+		.tree span:before {
+			top: -.55em;
+		}
+		.tree>li {
+			margin-top: 0;
+		}
+		.tree>li:before,
+		.tree>li:after,
+		.tree>li>code:before,
+		.tree>li>span:before {
+			outline: none;
+		}
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">Competition</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<a href="MyPage_Open_Courses.html">Open Courses</a>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+		<a href="MyPage_Reading.html">Reading List</a>
+	</div>
+	<div style = "overflow-y: scroll" class = "main">
+		<h1>Statistics</h1>
+		<h2>Intro</h2>
+		<p>Statistics is a way of reasoning, along with a collection of tools and methods, designed to help us understand the world. In other worlds, it is the art of deriving meaning from data.
+		</p>
+		<h2>Data</h2>
+		<p>The context for data values is provided by the "W"s and an "H".
+		<ul>
+		<li>Why (do we care about the data?)</li>
+		<li>Who (are the individuals described by the data?)</li>
+		<li>What (variables do the data contain?)</li>
+		<li>When</li>
+		<li>Where</li>
+		<li>How</li>
+		</ul>
+		Data can be split into two main types: categorical, data that can be placed into categories, or quantitative, data that has numerical values. Based on this type of categorization, there are also separate ways to
+		display this data. One example of this is a frequency table (shown below) that maps a categorical variable to a quantitative variable.
+		\begin{array}{|c|c|}
+			\hline
+			\text{Season Born} & \text{Count} \\
+			\hline
+			Winter & 7 \\ 
+			\hline
+			Spring & 13 \\
+			\hline
+			Summer & 6 \\
+			\hline
+			Fall & 8 \\
+			\hline
+		\end{array}
+		There are also other ways to represent data, include the bar graph and pie chart shown below:
+		</p>
+		<center>
+		<canvas id="bargraph" style="width:100%;max-width:600px" ></canvas>
+		<canvas id="piechart" style="width:100%;max-width:600px" ></canvas></center>
+		<p>
+		Of course there are many other ways to show the relationship between two variables including scatter plots, line graphs, or contingency tables. Even if there are ways to display the data, it is not useful to until
+		information can be extracted from it. This is only possible with quantitative variables, some important values that can be analyzed from lists of numbers are:
+		<ul>
+		<li>5 number summary: Consists of the minimum value, 1st quartile value (Q1), median, 3rd quartile value (Q3), and maximum. All of these values are conveniently displayed in a box and whisker plot</li>
+		<li>Mean: the average of all of the values. This can be split into a few versions: population mean represented as \(\mu\), sample mean represented as \(\overline{x}\), 
+		mean of the SDM of sample proportions represented as \(\mu_{\hat{p}}\), mean of the sample mean represented as \(\mu_{\bar{x}}\)</li>
+		<li>Standard Deviation: a measure of the amount of deviation in a set of values. Like the mean, this also has a few versions: Population standard deviation represented as \(\sigma\), sample standard deviation 
+		represented as \(s\), standard deviation of the sample mean represented as \(\sigma_x\), standard deviation of the SDM of sample proportions represented as \(\sigma_{\hat{p}}\)</li>
+		<li>IQR (interquartile range): calculated by subtracting the 1st quartile value from the 3rd quartile value</li>
+		<li>Outlier: are datapoints that seem to not fit in with the rest of the data. If a value is greater than 1.5 * IQR + Q3 or less than Q1 - 1.5 * IQR, then it is an outlier</li>
+		</ul>
+		From these special values, we can determine whether a graph is skewed or not. If it is left skewed, the median is to the right of the mean. If it is right skewed, the median is less than the mean. When choosing values
+		to give a summary of the data points, it is very important to consider outliers. Outliers greatly affect the mean and standard deviation, so the 5 number summary may be more representative of the data.
+		</p>
+		<p>
+		Data collection is very important part of statistics, as without proper data, all of the analyses that are done will be incorrect. Most of the time, it is impossible to collect data from an entire population. This means
+		that the next best choice would be to take samples. There are many types of samples that all have strict criteria that must be adhered to. First, the errors, more commonly known as biases:
+		<ul>
+		<li>Nonresponse: occurs when a large fraction of those being sampled will not or cannot respond</li>
+		<li>Voluntary response: occurs when individuals can choose whether or not to respond. This leads to a 100% inaccurate sample, because only individuals with strong opinions will respond.</li>
+		<li>Response: when the individual's response is affected by the design of the survey. For example, a person with a mustache walks around interviewing people about whether individuals with a mustache look good or bad.</li>
+		<li>Convenince: occurs when the sample is comprised of readily available individuals, which is highly unrepresentative</li>
+		<li>Undercoverage: occurs when individuals from a subgroup are selected less often than they should be</li>
+		</ul>
+		To counter this, there are a few solutions. The first being to sample randomly. Randomization is the best bet against bias, but there are ways to extend upon this with more sophisticated ways of sampling:
+		<ul>
+		<li>SRS: simple random sample is a sample in which each set of \(n\) elements in the population has an equal chance of being selected</li>
+		<li>Stratified sample: reduces sampling variability by indentifying homogeneous subgroups and then randomly sampling within each</li>
+		<li>Cluster sample: randomly select among heterogeneous subgroups that each resemble the population at large</li>
+		<li>Systematic sample: these only work when there is no relationship between th order of the sampling frame and the variables of interest. They are chosen systematically, as the name implies. Usually 
+		this happens when there is a list, and the sample is chosen by choosing every \(n\)th person </li>
+		<li>Multistage sample: combines several of the above sampling methods to further reduce sampling variability</li>
+		</ul>
+		This segments into experimental designs, which also has their own set of rules to match. First is controlling sources of variation other than the factors that are being tested by making conditions as similar as possible.
+		The second is randomizing subjects to treatments to even out effects that are uncontrollable. The third is replicate by repeating the experiment over as many subjects as possible. The last is to block, which is done
+		by further splitting the subjects into groups to reduce the effects of identifiable attributes of the subjects that cannot be controlled.
+		</p>
+		<h2>Normal Model</h2>
+		<p>Normal models, also known as bell-shaped curves, are arguably the most important part of statistics. They are appropriate for all unimodal and roughly symmetric distributions, as shown here: 
+		</p>
+		<center>
+		<img src="normal_model.JPG" alt="Normal Model" class = "center" style="width:600px;height:400px">
+		</center>
+		<p>
+		One of the most important rules is the empirical rule also known as the 68-95-99.7 rule. The rule states than the probability of choosing any value that lands at most 1 standard deviation away from the mean is 68%,
+		2 standard deviations away from the mean is 95%, and 3 standard deviations aways from the mean is 99.7%. Note that these are only rounded values, but they are good enough when doing calculations.
+		</p>
+		<p>
+		From the normal model, there are a few more important terms to know about:
+		<ul>
+		<li>z-score (\(z^*\)): The z-score of a value \(x\) is found by \(\displaystyle \frac{x-\overline{x}}{s}\)</li>
+		<li>If all of the values on the x-axis were to be replaced by their z-score, the model will have become standardized (Standard Normal Distribution). This occurs when the mean of the distribution is 0, while the 
+		standard deviation is 1.</li>
+		<li>The normal model is described by the mean \(\mu\) and the standard deviation \(\sigma\). The notation for this is \(N(\mu, \sigma)\)</li>
+		</ul>
+		</p>
+		<h2>Inference Testing</h2>
+		<p>
+		Because statistics is all about finding the meaning behind data, the majority of the cases that are dealt with do not have all of the possible data values of a population. As a result, inference tests are used to 
+		use samples to say something about the population. There are many inference tests, each one tailored to a certain type of dataset.
+		<ul class="tree">
+		  <li> <span>Data</span>
+			<ul>
+			  <li> <span>Categorical</span>
+				<ul>
+				  <li> <span>Proportions (\(z\))</span>
+					<ul>
+					  <li><span>if 1 sample</span>
+						<ul>
+						  <li><span>one-proportion</span></li>
+						</ul>
+					  </li>
+					  <li><span>if 2 sample</span>
+						<ul>
+						  <li><span>two-proportion</span></li>
+						</ul>
+					  </li>
+					</ul>
+				  </li>
+				  <li> <span>Distributions (\(\chi^2\))</span>
+					<ul>
+					  <li><span>if 1 variable</span>
+					    <ul>
+						  <li><span>if 1 sample</span>
+							<ul>
+							  <li><span>\(\chi^2\) test for Goodness-of-Fit</span></li>
+							</ul>
+						  </li>
+						  <li><span>if Independent groups</span>
+							<ul>
+							  <li><span>\(\chi^2\) test for homogeneity</span></li>
+							</ul>
+						  </li>
+						</ul>
+					  </li>
+					  <li><span>if 2 variable</span>
+						<ul>
+						  <li><span>if 1 sample</span>
+							<ul>
+							  <li><span>\(\chi^2\) test for Independence</span></li>
+							</ul>
+						  </li>
+						</ul>
+					  </li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>
+			  <li> <span>Quantitative</span>
+				<ul>
+				  <li> <span>Means (\(t\))</span>
+					<ul>
+					  <li><span>if 1 sample</span>
+					    <ul>
+						  <li><span>One-sample</span></li>
+						</ul>
+					  </li>
+					  <li><span>if 2 independent groups</span>
+					    <ul>
+						  <li><span>Two-sample</span></li>
+						</ul>
+					  </li>
+					  <li><span>if matched pairs</span>
+					    <ul>
+						  <li><span>Paired</span></li>
+						</ul>
+					  </li>
+					</ul>
+				  </li>
+				  <li> <span>Regression (\(t\))</span>
+					<ul>
+					  <li><span>2 variables (must have)</span>
+					    <ul>
+						  <li><span>Confidence Interval for \(\beta\)</span></li>
+						  <li><span>Linear Regression t-test</span></li>
+						</ul>
+					  </li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>
+			</ul>
+		  </li>
+		</ul>
+		Note that under proportions, each category has a z-interval and a z-test (not shown), that correspond to when the task as hand is to find the confidence interval or do a hypothesis test respectively. For the means, 
+		each one has a t-interval, for confidence interval, and a t-test, for a hypothesis test. When doing these inference tests, there are 4 steps that must be followed:
+		<ol>
+			<li>Paramters</li>
+			<li>Plan: decide what inference procedure to use, list the assumptions and check the conditions, and specify the name of the test.</li>
+			<li>Mechanics: Show the work that is done. Write down the statistics, draw the curves, and calculate the test statistics.</li>
+			<li>Conclusion: Interpret the results from the mechanics in the conclusion.</li>
+		</ol>
+		</p>
+		<h3>One-proportion z-interval or z-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: If the problem is dealing with confidence intervals, then the parameter is just the given confidence interval. Otherwise, the problem is dealing with the null hypothesis (\(H_0:p = p_0\)) and the alternative
+			hypothesis (\(H_A: p\neq p_0\) if it is 2 tailed or \(H_A: p >\) or \(< p_0\) if is one tailed). </li>
+			<li>Assumptions and Conditions must be passed
+			<ul>
+				<li>A1: Individuals/Data is independent</li>
+				<li>C1: SRS and \(n < 10\%\) of the population</li>
+				<li>A2: Sample is large enough to approximate SDM with a normal model</li>
+				<li>C2: The number of successes and the number of failures are both greater than or equal to 10</li>
+			</ul>
+			If they all pass, then it is okay to perform a one proportion z-interval or z-test.
+			</li>
+			<li>There are two cases to consider: confidence interval and hypothesis test.
+			<ul>
+				<li>z-interval: The knowns for this case are \(n\), the sample size, and \(\hat{p}\), the sample proportion. From these values, it is possible to find the standard error: $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\hat{q}}{n}}$$
+				where \(\hat{q}\) is \(1-\hat{p}\). Because the confidence level is also given, the z-score can be calculated as $$z^* = |invNorm(\frac{1- CL}{2})|$$ where \(CL\) stands for the confidence level. From these,
+				the margin of error(\(ME\)) is found to be: $$ME = \hat{p}\pm z^* \cdot SE(\hat{p})$$
+				</li>
+				<li>z-test: The knowns for this case are \(n\), the sample size, \(\hat{p}\), the same proportion, \(p_0\), the assumed population proportion. Because \(p_0\) is a better representation of the population compared
+				to the sample proportion, the standard deviation(\(SD\)) is calculated by: $$SD(\hat{p}) = \sqrt{\frac{p_0q_0}{n}}$$ where \(q_0 = 1 - p_0\). Thus, the normal model that can represent the data is \(N(p_0, SD(\hat{p}))\).
+				Then the z-score is found to be $$z^* = \frac{\hat{p} - p_0}{SD(\hat{p})}$$ Using the z-score, it is possible to find the p-value using normalcdf, the actual value that will be used to determing whether or not
+				the null hypothesis is supported or not. 
+				</li>
+			</ul>
+			</li>
+			<li>Conclusion: For the confidence interval, X% confident that the true population proportion lands between the Margin of Error. For the t-test, if the p-value is high, then we fail to reject the null hypothesis. Else, we
+			reject the null hypothesis. The p-value correctness is evaluated according to the following table:
+			\begin{array}{|c|c|c|}
+				\hline
+				& \text{Fail to reject }H_0 & \text{Reject}H_0 \\
+				\hline
+				H_0\text{ is true} & \text{OK} & \text{Type 1 error}\\ 
+				\hline
+				H_0\text{ is false} & \text{Type 2 error}& \text{Power}\\
+				\hline
+			\end{array}
+			</li>
+		</ol>
+		</p>
+		<h3>Two-proportion z-interval or z-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: If the problem is dealing with confidence intervals, then the parameter is just the given confidence interval. Otherwise, the problem is dealing with the null hypothesis (\(H_0:p_1 - p_2 = 0\)) and the alternative
+			hypothesis (\(H_A: p_1 - p_2 \neq 0\) if it is 2 tailed or \(H_A: p_1 - p_2 >\) or \(< 0\) if is one tailed). </li>
+			<li>Assumptions and Conditions must be passed
+			<ul>
+				<li>A0: Groups are independent</li>
+				<li>C0: Evaluate how the design of the experiment and how data is collected</li>
+				<li>A1: Individuals/data in each group is independent</li>
+				<li>C1: Both are SRS and \(n\) <10% of the respective populations OR are random allocations</li>
+				<li>A2: Both groups are large enough</li>
+				<li>C2: Both success greater than equal to 10 and failures greater than equal to 10</li>
+			</ul>
+			If they all pass, then it is okay to perform a two-proportion z-interval or z-test.
+			<li> 
+			There are two cases to consider: confidence interval and hypothesis test.
+			<ul>
+				<li>z-interval: The knowns for this case are \(n_1, n_2\), the sample sizes, and \(\hat{p}_1, \hat{p}_2\), the sample proportions. From these values, it is possible to find the standard error: 
+				$$SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1} + \frac{\hat{p}_2\hat{q}_2}{n_2}}$$
+				where \(\hat{q}_1 = 1-\hat{p}_1\) and \(\hat{q}_2 = 1-\hat{p}_2\). Because the confidence level is also given, the z-score can be calculated as $$z^* = |invNorm(\frac{1- CL}{2})|$$ where \(CL\) stands for the confidence level. From these,
+				the margin of error(\(ME\)) is found to be: $$ME = (\hat{p}_1 - \hat{p}_2)\pm z^* \cdot SE(\hat{p}_1 - \hat{p}_2)$$
+				</li>
+				<li>z-test: The knowns for this case are the same as those of the confidence interval. However, instead of using two separate proportions, they are pooled together to form
+				$$\hat{p}_{pooled} = \frac{\hat{p}_1n_1 + \hat{p}_2n_2}{n_1 + n_2}$$
+				The pooled standard error then is calculated by: $$SE_{pooled}(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}_{pooled}\hat{q}_{pooled}(\frac{1}{n_1} + \frac{1}{n_2})}$$ where \(\hat{q}_{pooled} = 1 - \hat{p}_{pooled}\). 
+				Thus, the normal model that can represent the data is \(N(\hat{p}_1 - \hat{p}_2, SE(\hat{p}_1 - \hat{p}_2))\).
+				Then the z-score is found to be $$z^* = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{SE_{pooled}(\hat{p}_1 - \hat{p}_2)}$$ Using the z-score, it is possible to find the p-value using normalcdf, 
+				the actual value that will be used to determing whether or not the null hypothesis is supported or not. 
+				</li>
+			</ul>
+			</li>
+			<li>Conclusion: For the confidence interval, X% confident that the true population proportion lands between the Margin of Error. For the t-test, if the p-value is high, then we fail to reject the null hypothesis. Else, we
+			reject the null hypothesis. The p-value correctness is evaluated according to the following table:
+			\begin{array}{|c|c|c|}
+				\hline
+				& \text{Fail to reject }H_0 & \text{Reject}H_0 \\
+				\hline
+				H_0\text{ is true} & \text{OK} & \text{Type 1 error}\\ 
+				\hline
+				H_0\text{ is false} & \text{Type 2 error}& \text{Power}\\
+				\hline
+			\end{array}
+			</li>
+		</ol>
+		</p>
+		<h3>\(\chi^2\) test for goodness of fit [df = # of cells - 1]</h3>
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there is only one variable with one sample that is compared to the population model. So the null hypothesis is \(H_0\): dstribution = specified model, while
+			the alternative hypthesis is \(H_A\): distribution \(\neq\) specified model (right side).
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A0: Data are counts</li>
+				<li>C0: Check to make sure all of the data values are actually counts</li>
+				<li>A1: Individuals/data is independent</li>
+				<li>C1: SRS and \(n\) <10% of the entire population</li>
+				<li>A2: Sample size large enough</li>
+				<li>C2: All expected counts greater than or equal to 5</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a \(\chi^2\) test for goodness of fit.
+			</li>
+			<li>The \(\chi^2\) value is calculated by: $$\chi^2 = \sum_{\text{all cells}} \frac{(Obs - Exp)^2}{Exp}$$ The p-value that is calculated from this uses the calculator function of \(\chi^2\)cdf because the graph is
+			not a normal model anymore. In fact for all \(\chi^2\) distritbutions, the graphs looks as follows: 
+			<center>
+			<img src="chi_squared.JPG" alt="Chi squared Model" style="width:600px;height:400px">
+			</center>
+			Note that the peak of the graph occurs at the degrees of freedom minus 2.
+			</li>
+			<li> If the p-value is high, then we fail to reject the null hypothesis. If the p-value is low, then we reject the null hypothesis. 
+			</li>
+		</ol>
+		</p>
+		<h3>\(\chi^2\) test for homogeneity [df = (r-1)(c-1)]</h3>
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there is only one variable with many groups compared on one variable. So the null hypothesis is \(H_0\): dstribution = each group, while
+			the alternative hypthesis is \(H_A\): distribution \(\neq\) each group (right side).
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A0: Data are counts</li>
+				<li>C0: Check to make sure all of the data values are actually counts</li>
+				<li>A1: Individuals/data is independent</li>
+				<li>C1: SRS and \(n\) <10% of the entire population OR random allocation</li>
+				<li>A2: Sample size large enough</li>
+				<li>C2: All expected counts greater than or equal to 5</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a \(\chi^2\) test for homogeneity.
+			</li>
+			<li>The \(\chi^2\) value is calculated by: $$\chi^2 = \sum_{\text{all cells}} \frac{(Obs - Exp)^2}{Exp}$$ and the expected value of each cell is calculated by 
+			$$Exp_{cell} = \frac{(\text{row total})(\text{column total})}{\text{grand total}}$$ The p-value that is calculated from this uses the calculator function of \(\chi^2\)cdf, which is the same as above.
+			</li>
+			<li> If the p-value is high, then we fail to reject the null hypothesis. If the p-value is low, then we reject the null hypothesis. 
+			</li>
+		</ol>
+		</p>
+		<h3>\(\chi^2\) test for independece [df = (r-1)(c-1)]</h3>
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there is only one variable with many groups compared on one variable. So the null hypothesis is \(H_0: v_1 \text{ and } v_2\) = independent, while
+			the alternative hypthesis is \(H_A: v_1 \text{ and } v_2 \neq\) independent.
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A0: Data are counts</li>
+				<li>C0: Check to make sure all of the data values are actually counts</li>
+				<li>A1: Individuals/data is independent</li>
+				<li>C1: SRS and \(n\) <10% of the entire population</li>
+				<li>A2: Sample size large enough</li>
+				<li>C2: All expected counts greater than or equal to 5</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a \(\chi^2\) test for independence.
+			</li>
+			<li>The \(\chi^2\) value is calculated by: $$\chi^2 = \sum_{\text{all cells}} \frac{(Obs - Exp)^2}{Exp}$$ and the expected value of each cell is calculated by 
+			$$Exp_{cell} = \frac{(\text{row total})(\text{column total})}{\text{grand total}}$$ The p-value that is calculated from this uses the calculator function of \(\chi^2\)cdf, which is the same as above.
+			</li>
+			<li> If the p-value is high, then we fail to reject the null hypothesis. If the p-value is low, then we reject the null hypothesis. 
+			</li>
+		</ol>
+		</p>
+		<h3>One Sample t-interval or t-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there is only one sample and it is dealing with means. If the problem is dealing with confidence intervals, then the only parameter is the confidence
+			interval. If the problem is dealing with hypothesis testing, then the null hypothesis is \(H_0: \mu = \mu_0\), and the alternative hypothesis is \(H_A: \mu \neq \mu_0\) when 2 tailed and \(H_A: \mu > \text{ or } < \mu_0\)
+			when one tailed.
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A1: Individuals/data independent</li>
+				<li>C1: SRS and \(n < 10%\) of entire population</li>
+				<li>A2: Population is normal (necessary to use student's t-model as SDM)</li>
+				<li>C2: Histogram has no outlier, unimodal, and symmetric (becomes less critical as n increases by the central limit theorem)</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a one sample t-interval or t-test.
+			</li>
+			<li>The number of degrees of freedom is equal to \(n-1\).Split this into two cases:
+			<ul>
+				<li>t-interval: The knowns in this situation are \(n\), the sample size, \(\bar{x}\), the sample mean, and \(s\), the sample standard deviation. From these values, the standard error is found to be
+				$$SE(\bar{x}) = \frac{s}{\sqrt{n}}$$ The t-score can also be calculated: $$t_{n-1}^* = |invT(\frac{1 - CL}{2} , df)|$$ Combining the two above pieces of information, the margin of error is equal to
+				$$\bar{x} \pm t_{n-1}^* \cdot SE(\bar{x})$$
+				</li>t-test: The knowns in this situation are \(n\), the sample size, \(\bar{x}\), the sample mean, \(s\), the sample standard deviation, and \(\mu_0\), the predicted population mean. The standard error is
+				equal to $$SE(\bar{x}) = \frac{s}{\sqrt{n}}$$ which as the same as above. The t-model is then modeled by \(t(\mu_0, \frac{s}{\sqrt{n}}, df)\). The resulting test statistic is found by 
+				$$t_{n-1} = \frac{\bar{x} - \mu_0}{SE(\bar{x)}}$$ Thus the p-value is equal to the tcdf of the test statistic.
+			</ul>
+			</li>
+			<li> Conclusion: For the confidence interval, X% confident that the true population proportion lands between the Margin of Error. For the t-test, if the p-value is high, then we fail to reject the null hypothesis. Else, we
+			reject the null hypothesis.
+			</li>
+		</ol>
+		</p>
+		<h3>Two Sample t-interval or t-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there are two samples and it is dealing with means. If the problem is dealing with confidence intervals, then the only parameter is the confidence
+			interval. If the problem is dealing with hypothesis testing, then the null hypothesis is \(H_0: \mu_1 - \mu_2 = \delta_0\), where \(\delta_0\) is almost always 0. The alternative hypothesis is 
+			\(H_A: \mu_1 - \mu_2 \neq \delta_0\) when 2 tailed and \(H_A: \mu_1 - mu_2 > \text{ or } < \delta_0\) when one tailed.
+			</li>
+			<li>Assumptions and conditions must be pass0
+			<ul>
+				<li>A0: Groups are independent</li>
+				<li>C0: Think about the design and how the data is collected</li>
+				<li>A1: Individuals/data in each group is independent</li>
+				<li>C1: Both are SRS and \(n < 10%\) of populations OR random allocation</li>
+				<li>A2: Both populations are normal</li>
+				<li>C2: Both Histograms have no outliers, unimodal, and symmetric (becomes less critical as n increases by the central limit theorem</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a two sample t-interval or t-test.
+			</li>
+			<li>The degrees of freedom cannot be found by hand, so use a calculator. The knowns for this situation is are \(n_1, n_2\), the two sample sizes, \(\bar{x}_1, \bar{x}_2\), the two sample means, and \(s_1, s_2\), 
+			the two sample standard deviations. From these values, the standard error is equal to: $$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$ Then, split into two cases:
+			<ul>
+				<li>t-interval: The t-score can also be calculated: $$t_{df}^* = |invT(\frac{1 - CL}{2} , df)|$$ Combining this with the standard error, the margin of error is found to be 
+				$$(\bar{x}_1 - \bar{x}_2) \pm t_{df}^* \cdot SE(\bar{x}_1 - \bar{x}_2)$$
+				</li>t-test: The test statistic is equal to $$t_{df} = \frac{(\bar{x}_1 - \bar{x}_2) - \delta_0}{SE(\bar{x}_1 - \bar{x}_2)}$$ Using the test statistic, it is possible to find the p-value by doing a tcdf.
+			</ul>
+			</li>
+			<li> Conclusion: For the confidence interval, X% confident that the true population proportion lands between the Margin of Error. For the t-test, if the p-value is high, then we fail to reject the null hypothesis. Else, we
+			reject the null hypothesis.
+			</li>
+		</ol>
+		</p>
+		<h3>Matched Pair t-interval or t-test</h3>
+		By matching all of the data, it effectively becomes a one-sample t-interval or t-test, which is why there are many similarities between the two.
+		<p>
+		<ol>
+			<li>Parameters: The condition for using this test is if there matched data dealing with means. If the problem is dealing with confidence intervals, then the only parameter is the confidence
+			interval. If the problem is dealing with hypothesis testing, then the null hypothesis is \(H_0: \mu_d = \delta_0\), where \(\delta_0\) is almost always 0. The alternative hypothesis is 
+			\(H_A: \mu_d \neq \delta_0\) when 2 tailed and \(H_A: \mu_d > \text{ or } < \delta_0\) when one tailed.
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A0: Groups are independent</li>
+				<li>C0: Think about the design and how the data is collected</li>
+				<li>A1: Individuals/data independent</li>
+				<li>C1: SRS and \(n < 10%\) of entire population</li>
+				<li>A2: Population is normal (necessary to use student's t-model as SDM)</li>
+				<li>C2: Histogram has no outlier, unimodal, and symmetric (becomes less critical as n increases by the central limit theorem)</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a matched pair t-interval or t-test.
+			</li>
+			<li>Split into two cases:
+			<ul>
+				<li>t-interval: The knowns in this situation are \(n\), the sample size, \(\bar{d}\), the mean difference, and \(s_d\), the standard deviation of the difference. From these values, the standard error is found to be
+				$$SE(\bar{d}) = \frac{s_d}{\sqrt{n}}$$ The t-score can also be calculated: $$t_{n-1}^* = |invT(\frac{1 - CL}{2} , df)|$$ Combining the two above pieces of information, the margin of error is equal to
+				$$\bar{d} \pm t_{n-1}^* \cdot SE(\bar{d})$$
+				</li>t-test: The knowns in this situation are \(n\), the sample size, \(\bar{d}\), the mean difference, \(s_D\), the standard deviation of the differences, and \(\delta_0\). The standard error is
+				equal to $$SE(\bar{d}) = \frac{s_d}{\sqrt{n}}$$ which as the same as above. The t-model is then modeled by \(t(\delta_0, \frac{s_d}{\sqrt{n}}, df)\). The resulting test statistic is found by 
+				$$t_{n-1} = \frac{\bar{d} - \delta_0}{SE(\bar{d)}}$$ Thus the p-value is equal to the tcdf of the test statistic.
+			</ul>
+			</li>
+			<li> Conclusion: For the confidence interval, X% confident that the true population proportion lands between the Margin of Error. For the t-test, if the p-value is high, then we fail to reject the null hypothesis. Else, we
+			reject the null hypothesis.
+			</li>
+		</ol>
+		</p>
+		<h3>Linear Regression t-interval or t-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: If it is a confidence interval, then the only parameter is the confidence level. If it is a hypothesis test, then the null hypothesis is \(H_0: \beta_1 = 0\), and the alternative hypothesis is
+			\(H_A: \beta_1 \neq 0\) for two tailed and \(H_A: \beta_1 > 0 \text{ or } <0\) for one tailed.
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>C1: Quantitative Variables (units and measure)</li>
+				<li>A2: Linearity and equal vairance assumptions</li>
+				<li>C2: Straight enough; check original scatterplot and residual scatterplot</li>
+				<li>C3: No outliers; no points on scatterplot with large residuals and/or high leverage</li>
+				<li>A4: Indpendence assumption</li>
+				<li>C4: Representative & no trends, clumpts in residuals</li>
+				<li>A5: Errors around regression line at each \(x\) is normal</li>
+				<li>C5: Historgram or normal plot of residuals are ok (unimodal, roughly symmetric)</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a Linear regression t-interval or t-test.
+			</li>
+			<li>For both cases, the standard error is found to be $$SE(b_1) = \frac{s_e}{\sqrt{n-1}s_x}$$ The t-interval is then found by $$b_1\pm t_{n-2}^* \cdot SE(b_1)$$ where 
+			$$t_{n-2}^* = |invT(\frac{1-CL}{2} , df)|$$ For the t-test, the test statistic is found to be $$t_{n-2} = \frac{b_1 - \beta_1}{SE(b_1)}$$. The resulting p-value is found by using a normal tcdf on 
+			the test statistic value with the degrees of freedom.
+			</li>
+			<li> For confidence interval, return the t-interval. Else, if the p-value is high, then we fail to reject the null hypothesis. If the p-value is low, then we reject the null hypothesis. 
+			</li>
+		</ol>
+		</p>
+		<h3>Multiple Regression f-test</h3>
+		<p>
+		<ol>
+			<li>Parameters: This can only be applied when many independent variables are compared to one dependent variable. Because this is a hypothesis test, the null hypothesis is 
+			\(H_0: \beta_1 = \beta_2 = \dots = \beta_n\) depending on the number of independent variables there are. The alternative hypothesis states that at least one of \(\beta_1, \beta_2, \dots, \beta_n\) is equal to 0.
+			</li>
+			<li>Assumptions and conditions must be passed
+			<ul>
+				<li>A1: Linearity assumption (all scatter plots bewteen each independent variable and the dependent variable is linear)</li>
+				<li>C1: Straight enough between each dependent and independent variable</li>
+				<li>A2: Independence assumption (all independent variables are independent of each other</li>
+				<li>C2: Randomizatin conditions (gathered data must be random)</li>
+				<li>A3: Equal variance assumption</li>
+				<li>C3: Does the plot thicken? condition</li>
+				<li>A4: Errors around regression line at each \(x\) is normal</li>
+				<li>C4: Historgram or normal plot of residuals are ok (unimodal, roughly symmetric)</li>
+			</ul>
+			If the assumptions and conditions are passed, then it is okay to perform a multiple regression f-test.
+			</li>
+			<li>The work is done by plugging in the all of the values into a calculator and making the calculator do the work. :)
+			</li>
+			<li> If the p-value is high, then we fail to reject the null hypothesis. If the p-value is low, then we reject the null hypothesis. 
+			</li>
+		</ol>
+		</p>
+	</div>
+	<script>
+	var xValues = ["Winter", "Spring", "Summer", "Fall"];
+	var yValues = [7, 13, 6, 8];
+	var barColors = ["red", "green","blue","orange"];
+
+	new Chart("bargraph", {
+		type: "bar",
+		data: {
+			labels: xValues,
+			datasets: [{
+			backgroundColor: barColors,
+			data: yValues
+			}]
+		},
+		options: {
+			legend: {display: false},
+			title: {
+				display: true,
+				text: "Counts of Season Born Bar Graph"
+			}
+		}
+	});
+	</script>
+	<script>
+	var xValues = ["Winter", "Spring", "Summer", "Fall"];
+	var yValues = [7, 13, 6, 8];
+	var barColors = ["red", "green","blue","orange"];
+
+	new Chart("piechart", {
+		type: "pie",
+		data: {
+			labels: xValues,
+			datasets: [{
+				backgroundColor: barColors,
+				data: yValues
+			}]
+		},
+		options: {
+		title: {
+			display: true,
+			text: "Counts of Season Born Pie Chart"
+		}
+	}
+	});
+	</script>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>

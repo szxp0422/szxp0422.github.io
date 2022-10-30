@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">Competition</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<a href="MyPage_Open_Courses.html">Open Courses</a>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+		<a href="MyPage_Reading.html">Reading List</a>
+	</div>
+	<div style = "overflow-y: scroll" class = "main">
+		<h1>Reading List</h1>
+		<h2>Fiction</h2>
+		<p>
+		<ul>
+			<li>The Joy Luck Club by Amy Tan</li>
+			<ul>
+				<li>Follows 4 mother-daughter relationships, and how each of them imprint on each other. They all follow the ways Asian parents teach their kids and focus heavily on tradition and respect.</li>
+			</ul>
+			<li>Frankenstein by Mary Shelley</li>
+			<ul>
+				<li>Victor Frankenstein, an avid scientist, manages to create an 8 foot tall creature, who is never given a name. The creature is instantly rejected because of how his hideous looks. He experiences the negative
+				parts of humanity, including hate and anger. His pleas to be for some normalcy are never accepted which causes him to seek revenge on his creator. Throughout the story, Victor's friends and family all
+				die, and Victor's burning passion to kill his own creature overtakes all of his logical reasoning. In the end, Victor dies, and the creature fleas to the arctic.
+				</li>
+			</ul>
+			<li>The Scarlet Letter by Nathaniel Hawthorne</li>
+			<ul>
+				<li>Hester Prynne has done the unthinkable in the 1640s Puritan society: she had a baby outside of her marriage. The story follows Hester, Pearl (her daughter, Arthur Dimmesdale (father of the child), 
+				and Roger Chillingworth (husband). As punishment for Hester, she is forced to wear a scarlet A and stand on scaffold for all to see. Pearl doesn't really care if she has no friends, and finds enjoyment
+				playing by herself. She is also quite smart, as she is able to figure out that everyone avoids her and her mom. Dimmesdale is plagued with guilt about the incident, and ultimately dies. Even though he never loved
+				Hester, Chillingworth is bent on revenge and making her life miserable. 
+				</li>
+			</ul>
+			<li>The Adventures of Huckleberry Finn by Mark Twain</li>
+			<ul>
+				<li>The novel follows Huckleberry Finn, a young boy who does not like to be constrained by society. He has an abusive father, who is a severe alcoholic. To avoid his father, he teams up with Jim, a black man
+				and flees up the Mississippi river. Along the way, he faces many issues, espcially with Jim during the Antebellum South (slavery was still big back then). In the end, Huckleberry Finn meets up with Tom Sawyer, his best
+				friend, and tells him that he will flee to the west to avoid be "civilized".
+				</li>
+			</ul>
+			<li>Oliver twist by Charles Dickens</li>
+			<ul>
+				<li>The story follows a young boy Oliver Twist, who has to suffer through the many curveballs that life throws at him. He grew up in an orphanage, became an apprentice to an undertaker, turned into a criminal,
+				and uncovers his entire life story from his half brother who wants wealth.
+				</li>
+			</ul>
+			<li>The Lord of the Flies by William Golding</li>
+			<ul>
+				<li>A group of young boys are stranded on an island after their plane crashes. They form their own community and try to survive. However, a subgroup of the boys led by the choir head decides to break off and wage war.
+				They become savages with a strict heiarchy and focus on killing pigs and the other boys. When the group is rescued, after burning down half of the island, they return to their original state of just boys being boys.
+				</li>
+			</ul>
+			<li>The Kite Runner by Khaled Hosseini</li>
+			<ul>
+				<li>Amir, an afghani immigrant who now lives in California, is called back to Kabul by one of his father's friends. The story recounts the Amir's life story of how he grew up with Hassan, watched him get
+				raped and not do anything about it, move to California, and get married. Now that he is back, he tries to make up to Hassan by saving his son from the Taliban.
+				</li>
+			</ul>
+			<li>The Hatchet (an its sequels) by Gary Paulsen</li>
+			<ul>
+				<li>Brian Robeson is on his way to the Canadian woods to visit his father. On the plane ride, where the pilot teaches him a few moves, the pilot experiences a heart attack. Brian becomes stranded and figures out
+				how to survive. The sequels are what would have happened if he was not rescued and the aftermath of the incident.
+				</li>
+			</ul>
+		</ul>
+		</p>
+		<h2>Science Fiction</h2>
+		<p>
+		<ul>
+			<li>Ready Player One by Ernest Cline</li>
+			<ul>
+				<li> Wade Watts is a high schooler living in a trailer park. It is 2045, and the world is ruined. Everyone lives in a VR simulation fittingly called "Oasis". There are functioning jobs, school, and everything
+				imaginable in the real world. However, the creator of the Oasis, James Halliday left the world with a game. Whoever beats all of the stages of the game will inherit all of his riches. Wade Watts desperately
+				wants to win it, and along the way faces the Sixers and finds love.
+				</li>
+			</ul>
+			<li>Unidentified by Douglas E. Richards</li>
+			<ul>
+				<li>Jason Ramsey is a hardcore believer of UFOs, also called UAVs or UAPs, but he has no evidence. To get this, he puts his body on the line and manages to connect with the Galactic Federation. They tell him
+				of an impending war with the Swarm, which much hesitation of course, and trust him to stop it. Jason is exposed to godly technology, and tries his best to save the woman that he loves and the world.
+				</li>
+			</ul>
+		</ul>
+		</p>
+		<h2>Fantasy</h2>
+		<p>
+		<ul>
+			<li>Miss Peregine's Home for Peculiar Children (and all of its sequels) by Ransom Rigss</li>
+			<ul>
+				<li>Jacob Portman uncovers a secret. His grandfather has the ability to see monsters, and so can he. Mystified by such a discovery, he goes to a place that his grandfather once mentioned and finds even more special children
+				living in a time loop. With Jake's presence, the group asks him to stay and help fight the hollowgast (the monsters that he can see). The hollows have been planning to steal the ymbrynes, who are shape-shifting women who can 
+				manipulate time, in order to commit atrocious acts. The sequels go on to explain how he will fight them, as he grows closer this peculiar group.
+				</li>
+			</ul>
+		</ul>
+		</p>
+		<h2>Plays</h2>
+		<p>
+		<ul>
+			<li>W;t by Margaret Edson</li>
+			<ul>
+				<li>Vivian is a 50 year old professor who specializes in the sonnets of John Donne. She suffers from cancer and the play goes on to tell her how she reflects on her life and the people around her.
+				</li>
+			</ul>
+			<li>Romeo and Julie by Shakespeare</li>
+			<ul>
+				<li>To be blunt: two thirteen year olds fall into forbidden love. Due to family tensions, they both commit suicide three days later. 
+				</li>
+			</ul>
+			<li>Hamlet</li>
+			<ul>
+				<li>Currently in progress (will update soon)
+				</li>
+			</ul>
+		</ul>
+		</p>
+	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">Competition</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<a href="MyPage_Open_Courses.html">Open Courses</a>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+		<a href="MyPage_Reading.html">Reading List</a>
+	</div>
+	<div class = "main">
+		<h1>Open Courses</h1>
+		<p>Here are some open courses that I have taken</p>
+		<ul>
+		<li>MIT Linear Algebra: <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target = "_blank">https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/</a></li>
+		<li>MIT Statistics for Applications: <a href="https://ocw.mit.edu/courses/18-443-statistics-for-applications-spring-2015/" target = "_blank">https://ocw.mit.edu/courses/18-443-statistics-for-applications-spring-2015/</a></li>
+		<li>Georgia Tech Computer Vision: <a href="https://learn.udacity.com/courses/ud810" target = "_blank">https://learn.udacity.com/courses/ud810</a></li>
+		<li>Harvard CS50x Introduction to Computer Science: <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0" target = "_blank">https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0</a></li>
+		<li>Stanford Supervised Machine Learning: Regression and Classification: <a href="https://www.coursera.org/learn/machine-learning" target = "_blank">https://www.coursera.org/learn/machine-learning</a></li>
+		<li>Deeplearning.AI Neural Network and Deep Learning: <a href="https://www.coursera.org/learn/neural-networks-deep-learning" target = "_blank">https://www.coursera.org/learn/neural-networks-deep-learning</a></li>
+		</ul>
+	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>
