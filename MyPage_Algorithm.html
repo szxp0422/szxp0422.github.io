@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">Competition</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<a href="MyPage_Open_Courses.html">Open Courses</a>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+		<a href="MyPage_Reading.html">Reading List</a>
+	</div>
+	<div style = "overflow-y: scroll" class = "main">
+		<h1>Common Algorithms</h1>
+		<h2>Sorting and Searching</h2>
+		<p>
+		<ul>
+		<li>Bubble Sort: small (or large) values "float" to the top. Time complexity O\((n^2)\)</li>
+		<li>Selection Sort: goes through the list multiple times and identifies the smallest (or largest) and puts it in the current index. Time complexity O\((n^2)\)</li>
+		<li>Binary Sort/Search: Puts all the values in a binary tree, and reorganizes the tree. Time complexity O\((n\log(n))\)</li>
+		<li>Quick Sort: Split up the list of numbers and sort while splitting. Time complexity O\((n\log(n))\)</li>
+		<li>Many other can be found at <a href="https://www.bigocheatsheet.com/" target = "_blank">https://www.bigocheatsheet.com/</a></li>
+		</ul>
+		</p>
+		<h3>Greedy Algorithm</h3>
+		<p>Choosing the best possible choice whenever a decision is to be made.</p>
+		<h2>Graphs and Trees</h2>
+		<h3>BFS and DFS Algorithm</h3>
+		<p>BFS stands for breath first search, and DFS stands for depth first search. Both of these are searching methods on trees. BFS goes though a tree layer by layer. This can be done by adding the new 
+		values to the end of a queue and popping them once they have been run through. DFS goes depth first and then backtracks, and then dives into another branch of the tree. It continues until all nodes have been hit.</p>
+		<h3>Dijkstra's Algorithm + Bellman Ford + Floyd Warshall + shortest path algorithms</h3>
+		<p>These are all algorithms that search for the shortest, or lowest weighted, path from one node to another in a graph. Dijkstra's algorithm starts from the beginning node, picks the unvisited vertex with the lowest distance, 
+		calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Bellman Ford follows a similar process but it also works with negative weights. If a negative cycle is
+		detected, the algorithm will know to stop. Floyd Warshall does not work when negative cycles are present, but a single run through of this algorithm returns all of the distances between any two nodes.</p>
+		<h3>DSU (Disjoint Set Union)</h3>
+		<p>By adding edges to an initially empty set of nodes, the algorithm can instantaneously (\(O(1)\)) determine whether two nodes are connected or not.</p>
+		<h3>Minimum Spanning Trees</h3>
+		<p>A subset of the edges of a connected, undirected, edge-weighted graph that connects all the vertices to each other of minimum total weight, where no cycles are allowed.</p>
+		<h3>Segment Tree</h3>
+		<p>Essentially cutting an array into different segments and then building upwards like a tree. This type of tree is very efficient when updating range queries and range update.</p>
+		<h2>Dynamic Programming</h2>
+		<p>This type of programming depends heavily on the prompt. Usually it consists of saving certain values and using them in the future to save time (so a trade off of time and space). There can be many layered 
+		DP problems that are more problematic because of the increasing of variables that need to be considered. An few examples of this would be knapsack dp, longest subsequence, and paths on grids.</p>
+	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>

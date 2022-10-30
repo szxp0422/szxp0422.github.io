@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Home</title>
+	<meta http-equiv = "Content-Type" name = "text/html; charset = UTF-8">
+	<meta name = "author" content = "Steven Pan">
+	<style>
+		.myDiv {
+			border: 5px outset darkblue;
+			background-color: lightblue;
+			text-align: center;
+		}
+		.sidebar {
+			height: 90%;
+			width: 10%;
+			position: fixed;
+			z-index: 1;
+			top: 10%;
+			left: 0;
+			background-color: lightblue;
+			transition: 0.5s;
+			padding-top: 30px;
+		}
+		.sidebar a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			transition: 0.3s;
+		}
+		.sidebar a:hover {
+			color: blue;
+		}
+		.dropdown-btn {
+			font-family: "Times New Roman";
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: darkblue;
+			display: block;
+			border: none;
+			background: none;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+		.dropdown-btn:hover {
+			color: blue;
+		}
+		.active {
+			background-color: #99C4D2;
+			color: blue;
+		}
+		.dropdown-container {
+			display: none;
+			background-color: #C1ECFA;
+			padding-left: 8px;
+		}
+		.main {
+			background-color: white;
+			height: 90%;
+			width: 87%;
+			position: fixed;
+			top: 10%;
+			right: 0;
+			padding-left: 30px;
+		}
+	</style>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class = "myDiv">
+		<font color = "black">
+			<font size = "+5"> Steven Pan </font>
+		</font>
+	</div>
+	<div class="sidebar">
+		<a href="MyPage_Home.html">Home</a>
+		<a href="MyPage_AboutMe.html">About Me</a>
+		<button class="dropdown-btn">Math</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Math_Resources.html">Resources</a>
+			<a href="MyPage_Stats.html">Statistics</a>
+			<a href="MyPage_Math.html">Competition</a>
+		</div>
+		<button class="dropdown-btn">Computer Science</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Hardware.html">Hardware</a>
+			<button class="dropdown-btn">AI</button>
+			<div class="dropdown-container">
+				<a href="MyPage_Computer_Vision.html">Computer Vision</a>
+				<a href="MyPage_CNN.html">CNN</a>
+			</div>
+			<a href="MyPage_Algorithm.html">Algorithm</a>
+		</div>
+		<a href="MyPage_Open_Courses.html">Open Courses</a>
+		<button class="dropdown-btn">Projects</button>
+		<div class="dropdown-container">
+			<a href="MyPage_Traffic.html">Traffic Sim</a>
+			<a href="MyPage_Golf_Ranking.html">Golf Ranking</a>
+			<a href="MyPage_Hardware_Proj.html">Hardware Proj</a>
+			<a href="MyPage_Wind_Turbine.html">Wind Turbine</a>
+		</div>
+		<a href="MyPage_Golf.html">Golf</a>
+		<a href="MyPage_Reading.html">Reading List</a>
+	</div>
+	<div class = "main">
+		<h1>CNN - Convolutional Neural Network</h1>
+		<p>First things first, CNN does not mean the news channel. CNN stands for convolutional nueral networks, which are a crucial part of computer vision (until YOLO came along).</p>
+		<p>So many parts of this section may seem very similar to what is in the computer vision section. We will focus a lot of kernels, which are very important for identifying features in an image that allows us to 
+		actually detect an object. For example, by identifying wheels in an image, we could then match probabilities to see if the object was a bicycle or a car. The first step in this process, is once again, edge detection.
+		Edges give us the most basic outline for any image. However, in the computer vision section, we mentioned that everything would be done in grayscale. Images taken by any modern camera, now contains colors, which are
+		represented by 3 channels, namely Red, Green, and Blue (RGB). In CNN, the first input image will usually be represented as $$m * n * 3$$ This stands for \(m\) pixels by \(n\) pixels by 3 channels. 
+		</p>
+		<p>We will now go over fancier methods of convolution using kernels. The first method is called Padding. We notice that when the kernel has size \(3 x 3\), we don't directly start at the top left corner, as 5 pixels
+		will have nothing to match to. Normally, we start at one pixel down, one pixel to the right and end one pixel up, one pixel to the left, making changing \(m * n\) to become \((m-2)*(n-2)\). By adding this padding, or
+		extra pixels that surround the original image, we can maintain the size of the convoluted image. Now, we need to choose the type of pixels that we use for the padding. The one that makes the most sense would be to
+		flip each adajcent row or column of pixels. This way, everything averages out nicely, and we do not need to worry about the image being altered too much. 
+		</p>
+		<p>
+		The next method is strided convoluntion. Normally, when we apply a filter, we start at the top left, shift it one pixel at a time, all the way to the other side. Then, we shift it one pixel down and continue the process.
+		Sometimes, we do not need all of these detailed information, especially if the image is very large. Strided convolution is the very similar, but instead of moving 1 pixel, we move multiple (and always round down). The resulting
+		image, would then have even less than \((m-2) * (n-2)\) pixels if we were using a 3 by 3 kernel. By applying these two methods to set up convolution, we can go on to talk about layers.
+		</p>
+		<p>In each layer, there are multiple filters that must be applied, because we are looking for features. Thus, for a simple 3 by 3 by 3 kernel, our layer may have 10 of them, for a total of 10 features. Thus, it totals at
+		3 by 3 by 3 by 10. Assume that we perform this on a 6 by 6 by 3, with stride equal to 1 and no padding. The resulting image would be 4 by 4 by 10. The 4 by 4 is achieved because we do a 3 by 3 convolution on the 6 by 6 and
+		sum it up 3 times (once per channel). By repeating this process many times, we can identify many features with a relatively small ending pixel size even for large images while maintaing the color.
+		</p>
+	</div>
+	<script>
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+	</script>
+</body>
+</html>
