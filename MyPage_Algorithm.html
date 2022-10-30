@@ -126,16 +126,22 @@
 		<h3>BFS and DFS Algorithm</h3>
 		<p>BFS stands for breath first search, and DFS stands for depth first search. Both of these are searching methods on trees. BFS goes though a tree layer by layer. This can be done by adding the new 
 		values to the end of a queue and popping them once they have been run through. DFS goes depth first and then backtracks, and then dives into another branch of the tree. It continues until all nodes have been hit.</p>
+		<p>A sample bfs problem: if there are n cities and m roads already between them, what is the minimum number of roads needed in order to ensure that all cities are connected to each other? A
+		sample dfs problem: If there are n kids and m friendships between them, split them into two teams such that no two kids are friends in the same team.</p>
 		<h3>Dijkstra's Algorithm + Bellman Ford + Floyd Warshall + shortest path algorithms</h3>
 		<p>These are all algorithms that search for the shortest, or lowest weighted, path from one node to another in a graph. Dijkstra's algorithm starts from the beginning node, picks the unvisited vertex with the lowest distance, 
 		calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Bellman Ford follows a similar process but it also works with negative weights. If a negative cycle is
 		detected, the algorithm will know to stop. Floyd Warshall does not work when negative cycles are present, but a single run through of this algorithm returns all of the distances between any two nodes.</p>
+		<p>A sample shortest path problem is: There are n cities labelled 1 to n, and you want to travel from city 1 to city n. There are m paths, each with a certain cost c. What is the minimum price of the trip from city 1 to city n?
+		Alternate questions include, how many minimum priced routes are there? What is the maximum/minimum number of roads that can be taken?</p>
 		<h3>DSU (Disjoint Set Union)</h3>
 		<p>By adding edges to an initially empty set of nodes, the algorithm can instantaneously (\(O(1)\)) determine whether two nodes are connected or not.</p>
 		<h3>Minimum Spanning Trees</h3>
 		<p>A subset of the edges of a connected, undirected, edge-weighted graph that connects all the vertices to each other of minimum total weight, where no cycles are allowed.</p>
+		<center><img src="minspanningtree.JPG" alt="Minimum Spanning Tree" class = "center" style="width:500px;height:400px"></center>
 		<h3>Segment Tree</h3>
 		<p>Essentially cutting an array into different segments and then building upwards like a tree. This type of tree is very efficient when updating range queries and range update.</p>
+		<center><img src="segmenttree.JPG" alt="Segment Tree" class = "center" style="width:500px;height:400px"></center>
 		<h2>Dynamic Programming</h2>
 		<p>This type of programming depends heavily on the prompt. Usually it consists of saving certain values and using them in the future to save time (so a trade off of time and space). There can be many layered 
 		DP problems that are more problematic because of the increasing of variables that need to be considered. An few examples of this would be knapsack dp, longest subsequence, and paths on grids.</p>
